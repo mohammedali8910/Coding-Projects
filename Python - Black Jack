@@ -1,4 +1,4 @@
-#This script is for a game of Black Jack using classes
+#This script is for a game of Black Jack using classes for cards, player decks, players hand and chips
 
 import random
 suits = ('Hearts', 'Diamonds', 'Spades', 'Clubs')
