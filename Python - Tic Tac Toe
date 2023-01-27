@@ -1,0 +1,956 @@
+#This is Python code for a game of Tic Tac Toe 
+
+def win_check(row1,row2,row3):
+    if row1[0] == 'X' and row1[1] == 'X' and row1[2] == 'X':
+        return True
+    elif row2[0] == 'X' and row2[1] == 'X' and row2[2] == 'X':
+        return True
+    elif row3[0] == 'X' and row3[1] == 'X' and row3[2] == 'X':
+        return True
+    elif row1[0] == 'X' and row2[0] == 'X' and row3[0] == 'X':
+        return True
+    elif row1[1] == 'X' and row2[1] == 'X' and row3[1] == 'X':
+        return True
+    elif row1[2] == 'X' and row2[2] == 'X' and row3[2] == 'X':
+        return True
+    elif row1[0] == 'X' and row2[1] == 'X' and row3[2] == 'X':
+        return True
+    elif row1[2] == 'X' and row2[1] == 'X' and row3[0] == 'X':
+        return True
+    
+    if row1[0] == 'O' and row1[1] == 'O' and row1[2] == 'O':
+        return True
+    elif row2[0] == 'O' and row2[1] == 'O' and row2[2] == 'O':
+        return True
+    elif row3[0] == 'O' and row3[1] == 'O' and row3[2] == 'O':
+        return True
+    elif row1[0] == 'O' and row2[0] == 'O' and row3[0] == 'O':
+        return True
+    elif row1[1] == 'O' and row2[1] == 'O' and row3[1] == 'O':
+        return True
+    elif row1[2] == 'O' and row2[2] == 'O' and row3[2] == 'O':
+        return True
+    elif row1[0] == 'O' and row2[1] == 'O' and row3[2] == 'O':
+        return True
+    elif row1[2] == 'O' and row2[1] == 'O' and row3[0] == 'O':
+        return True
+    else:
+        return False
+
+def tictac():
+    count = 0
+    plays = 9
+    taken = []
+    check = ' '
+    check2 = ' '
+    row1 = ['1', '2', '3']
+    row2 = ['4', '5', '6']
+    row3 = ['7', '8', '9']
+    play = input('Welcome to a game of Tic Tac Toe, Would you like to play(yes/no): ')
+    print(' ')
+    if play == 'yes':
+        print('Here is the board, please select the space using the place holder text(i.e 1)')
+        print(' ')
+        print(row1)
+        print(row2)
+        print(row3)
+        while count != plays:
+            if count == 9:
+                break
+            x = int(input('Enter X placement: '))
+            if x not in taken:
+                if x > 0 and x <=9:
+                    if x == 1:
+                        taken.append(x)
+                        row1[0] = 'X'
+                        print(row1)
+                        print(row2)
+                        print(row3)
+                        count += 1
+                        if win_check(row1, row2, row3) == True:
+                            print('X wins')
+                            break
+                    elif x == 2:
+                        taken.append(x)
+                        row1[1] = 'X'
+                        print(row1)
+                        print(row2)
+                        print(row3)
+                        count += 1
+                        if win_check(row1, row2, row3) == True:
+                            print('X wins')
+                            break
+                    elif x == 3:
+                        taken.append(x)
+                        row1[2] = 'X'
+                        print(row1)
+                        print(row2)
+                        print(row3)
+                        count += 1
+                        if win_check(row1, row2, row3) == True:
+                            print('X wins')
+                            break
+                    elif x == 4:
+                        taken.append(x)
+                        row2[0] = 'X'
+                        print(row1)
+                        print(row2)
+                        print(row3)
+                        count += 1
+                        if win_check(row1, row2, row3) == True:
+                            print('X wins')
+                            break
+                    elif x == 5:
+                        taken.append(x)
+                        row2[1] = 'X'
+                        print(row1)
+                        print(row2)
+                        print(row3)
+                        count += 1
+                        if win_check(row1, row2, row3) == True:
+                            print('X wins')
+                            break
+                    elif x == 6:
+                        taken.append(x)
+                        row2[2] = 'X'
+                        print(row1)
+                        print(row2)
+                        print(row3)
+                        count += 1
+                        if win_check(row1, row2, row3) == True:
+                            print('X wins')
+                            break
+                    elif x == 7:
+                        taken.append(x)
+                        row3[0] = 'X'
+                        print(row1)
+                        print(row2)
+                        print(row3)
+                        count += 1
+                        if win_check(row1, row2, row3) == True:
+                            print('X wins')
+                            break
+                    elif x == 8:
+                        taken.append(x)
+                        row3[1] = 'X'
+                        print(row1)
+                        print(row2)
+                        print(row3)
+                        count += 1
+                        if win_check(row1, row2, row3) == True:
+                            print('X wins')
+                            break
+                    elif x == 9:
+                        taken.append(x)
+                        row3[2] = 'X'
+                        print(row1)
+                        print(row2)
+                        print(row3)
+                        count += 1
+                        if win_check(row1, row2, row3) == True:
+                            print('X wins')
+                            break
+                else:
+                    print('Invalid, must be between 1 - 9')
+                    check = 'out'
+                    while check != ' ':
+                        x = int(input('Enter X plaacement: '))
+                        if x not in taken:
+                            if x > 0 and x <=9:
+                                if x == 1:
+                                    taken.append(x)
+                                    row1[0] = 'X'
+                                    print(row1)
+                                    print(row2)
+                                    print(row3)
+                                    count += 1
+                                    if win_check(row1, row2, row3) == True:
+                                        print('X wins')
+                                        return
+                                    else:
+                                        check = ' '
+                                elif x == 2:
+                                    taken.append(x)
+                                    row1[1] = 'X'
+                                    print(row1)
+                                    print(row2)
+                                    print(row3)
+                                    count += 1
+                                    if win_check(row1, row2, row3) == True:
+                                        print('X wins')
+                                        return
+                                    else:
+                                        check = ' '
+                                elif x == 3:
+                                    taken.append(x)
+                                    row1[2] = 'X'
+                                    print(row1)
+                                    print(row2)
+                                    print(row3)
+                                    count += 1
+                                    if win_check(row1, row2, row3) == True:
+                                        print('X wins')
+                                        return
+                                    else:
+                                        check = ' '
+                                elif x == 4:
+                                    taken.append(x)
+                                    row2[0] = 'X'
+                                    print(row1)
+                                    print(row2)
+                                    print(row3)
+                                    count += 1
+                                    if win_check(row1, row2, row3) == True:
+                                        print('X wins')
+                                        return
+                                    else:
+                                        check = ' '
+                                elif x == 5:
+                                    taken.append(x)
+                                    row2[1] = 'X'
+                                    print(row1)
+                                    print(row2)
+                                    print(row3)
+                                    count += 1
+                                    if win_check(row1, row2, row3) == True:
+                                        print('X wins')
+                                        return
+                                    else:
+                                        check = ' '
+                                elif x == 6:
+                                    taken.append(x)
+                                    row2[2] = 'X'
+                                    print(row1)
+                                    print(row2)
+                                    print(row3)
+                                    count += 1
+                                    if win_check(row1, row2, row3) == True:
+                                        print('X wins')
+                                        return
+                                    else:
+                                        check = ' '
+                                elif x == 7:
+                                    taken.append(x)
+                                    row3[0] = 'X'
+                                    print(row1)
+                                    print(row2)
+                                    print(row3)
+                                    count += 1
+                                    if win_check(row1, row2, row3) == True:
+                                        print('X wins')
+                                        return
+                                    else:
+                                        check = ' '
+                                elif x == 8:
+                                    taken.append(x)
+                                    row3[1] = 'X'
+                                    print(row1)
+                                    print(row2)
+                                    print(row3)
+                                    count += 1
+                                    if win_check(row1, row2, row3) == True:
+                                        print('X wins')
+                                        return
+                                    else:
+                                        check = ' '
+                                elif x == 9:
+                                    taken.append(x)
+                                    row3[2] = 'X'
+                                    print(row1)
+                                    print(row2)
+                                    print(row3)
+                                    count += 1
+                                    if win_check(row1, row2, row3) == True:
+                                        print('X wins')
+                                        return
+                                    else:
+                                        check = ' '
+                            else:
+                                print('Invalid, must be between 1 - 9')
+            else:
+                print('This place is already taken, try again')
+                check2 = 'taken'
+                while check2 != ' ':
+                    x = int(input('Enter X placement: '))
+                    if x not in taken:
+                        if x > 0 and x <=9:
+                            if x == 1:
+                                taken.append(x)
+                                row1[0] = 'X'
+                                print(row1)
+                                print(row2)
+                                print(row3)
+                                count += 1
+                                if win_check(row1, row2, row3) == True:
+                                    print('X wins')
+                                    return
+                                else:
+                                        check2 = ' '
+                            elif x == 2:
+                                taken.append(x)
+                                row1[1] = 'X'
+                                print(row1)
+                                print(row2)
+                                print(row3)
+                                count += 1
+                                if win_check(row1, row2, row3) == True:
+                                    print('X wins')
+                                    return
+                                else:
+                                        check2 = ' '
+                            elif x == 3:
+                                taken.append(x)
+                                row1[2] = 'X'
+                                print(row1)
+                                print(row2)
+                                print(row3)
+                                count += 1
+                                if win_check(row1, row2, row3) == True:
+                                    print('X wins')
+                                    return
+                                else:
+                                        check2 = ' '
+                            elif x == 4:
+                                taken.append(x)
+                                row2[0] = 'X'
+                                print(row1)
+                                print(row2)
+                                print(row3)
+                                count += 1
+                                if win_check(row1, row2, row3) == True:
+                                    print('X wins')
+                                    return
+                                else:
+                                        check2 = ' '
+                            elif x == 5:
+                                taken.append(x)
+                                row2[1] = 'X'
+                                print(row1)
+                                print(row2)
+                                print(row3)
+                                count += 1
+                                if win_check(row1, row2, row3) == True:
+                                    print('X wins')
+                                    return
+                                else:
+                                        check2 = ' '
+                            elif x == 6:
+                                taken.append(x)
+                                row2[2] = 'X'
+                                print(row1)
+                                print(row2)
+                                print(row3)
+                                count += 1
+                                if win_check(row1, row2, row3) == True:
+                                    print('X wins')
+                                    return
+                                else:
+                                        check2 = ' '
+                            elif x == 7:
+                                taken.append(x)
+                                row3[0] = 'X'
+                                print(row1)
+                                print(row2)
+                                print(row3)
+                                count += 1
+                                if win_check(row1, row2, row3) == True:
+                                    print('X wins')
+                                    return
+                                else:
+                                        check2 = ' '
+                            elif x == 8:
+                                taken.append(x)
+                                row3[1] = 'X'
+                                print(row1)
+                                print(row2)
+                                print(row3)
+                                count += 1
+                                if win_check(row1, row2, row3) == True:
+                                    print('X wins')
+                                    return
+                                else:
+                                        check2 = ' '
+                            elif x == 9:
+                                taken.append(x)
+                                row3[2] = 'X'
+                                print(row1)
+                                print(row2)
+                                print(row3)
+                                count += 1
+                                if win_check(row1, row2, row3) == True:
+                                    print('X wins')
+                                    return
+                                else:
+                                        check2 = ' '
+                        else:
+                            print('Invalid, must be between 1 - 9')
+                            check = 'out'
+                            while check != ' ':
+                                x = int(input('Enter X plaacement: '))
+                                if x not in taken:
+                                    if x > 0 and x <=9:
+                                        if x == 1:
+                                            taken.append(x)
+                                            row1[0] = 'X'
+                                            print(row1)
+                                            print(row2)
+                                            print(row3)
+                                            count += 1
+                                            if win_check(row1, row2, row3) == True:
+                                                print('X wins')
+                                                return
+                                            else:
+                                                check = ' '
+                                        elif x == 2:
+                                            taken.append(x)
+                                            row1[1] = 'X'
+                                            print(row1)
+                                            print(row2)
+                                            print(row3)
+                                            count += 1
+                                            if win_check(row1, row2, row3) == True:
+                                                print('X wins')
+                                                return
+                                            else:
+                                                check = ' '
+                                        elif x == 3:
+                                            taken.append(x)
+                                            row1[2] = 'X'
+                                            print(row1)
+                                            print(row2)
+                                            print(row3)
+                                            count += 1
+                                            if win_check(row1, row2, row3) == True:
+                                                print('X wins')
+                                                return
+                                            else:
+                                                check = ' '
+                                        elif x == 4:
+                                            taken.append(x)
+                                            row2[0] = 'X'
+                                            print(row1)
+                                            print(row2)
+                                            print(row3)
+                                            count += 1
+                                            if win_check(row1, row2, row3) == True:
+                                                print('X wins')
+                                                return
+                                            else:
+                                                check = ' '
+                                        elif x == 5:
+                                            taken.append(x)
+                                            row2[1] = 'X'
+                                            print(row1)
+                                            print(row2)
+                                            print(row3)
+                                            count += 1
+                                            if win_check(row1, row2, row3) == True:
+                                                print('X wins')
+                                                return
+                                            else:
+                                                check = ' '
+                                        elif x == 6:
+                                            taken.append(x)
+                                            row2[2] = 'X'
+                                            print(row1)
+                                            print(row2)
+                                            print(row3)
+                                            count += 1
+                                            if win_check(row1, row2, row3) == True:
+                                                print('X wins')
+                                                return
+                                            else:
+                                                check = ' '
+                                        elif x == 7:
+                                            taken.append(x)
+                                            row3[0] = 'X'
+                                            print(row1)
+                                            print(row2)
+                                            print(row3)
+                                            count += 1
+                                            if win_check(row1, row2, row3) == True:
+                                                print('X wins')
+                                                return
+                                            else:
+                                                check = ' '
+                                        elif x == 8:
+                                            taken.append(x)
+                                            row3[1] = 'X'
+                                            print(row1)
+                                            print(row2)
+                                            print(row3)
+                                            count += 1
+                                            if win_check(row1, row2, row3) == True:
+                                                print('X wins')
+                                                return
+                                            else:
+                                                check = ' '
+                                        elif x == 9:
+                                            taken.append(x)
+                                            row3[2] = 'X'
+                                            print(row1)
+                                            print(row2)
+                                            print(row3)
+                                            count += 1
+                                            if win_check(row1, row2, row3) == True:
+                                                print('X wins')
+                                                return
+                                            else:
+                                                check = ' '
+                                    else:
+                                        print('Invalid, must be between 1 - 9')
+                    else:
+                        print('This place is already taken, try again')
+            if count == 9:
+                break
+            o = int(input('Enter O placement: '))
+            if o not in taken:
+                if o > 0 and o <=9:
+                    if o == 1:
+                        taken.append(o)
+                        row1[0] = 'O'
+                        print(row1)
+                        print(row2)
+                        print(row3)
+                        count += 1
+                        if win_check(row1, row2, row3) == True:
+                            print('O wins')
+                            break
+                    elif o == 2:
+                        taken.append(o)
+                        row1[1] = 'O'
+                        print(row1)
+                        print(row2)
+                        print(row3)
+                        count += 1
+                        if win_check(row1, row2, row3) == True:
+                            print('O wins')
+                            break
+                    elif o == 3:
+                        taken.append(o)
+                        row1[2] = 'O'
+                        print(row1)
+                        print(row2)
+                        print(row3)
+                        count += 1
+                        if win_check(row1, row2, row3) == True:
+                            print('O wins')
+                            break
+                    elif o == 4:
+                        taken.append(o)
+                        row2[0] = 'O'
+                        print(row1)
+                        print(row2)
+                        print(row3)
+                        count += 1
+                        if win_check(row1, row2, row3) == True:
+                            print('O wins')
+                            break
+                    elif o == 5:
+                        taken.append(o)
+                        row2[1] = 'O'
+                        print(row1)
+                        print(row2)
+                        print(row3)
+                        count += 1
+                        if win_check(row1, row2, row3) == True:
+                            print('O wins')
+                            break
+                    elif o == 6:
+                        taken.append(o)
+                        row2[2] = 'O'
+                        print(row1)
+                        print(row2)
+                        print(row3)
+                        count += 1
+                        if win_check(row1, row2, row3) == True:
+                            print('O wins')
+                            break
+                    elif o == 7:
+                        taken.append(o)
+                        row3[0] = 'O'
+                        print(row1)
+                        print(row2)
+                        print(row3)
+                        count += 1
+                        if win_check(row1, row2, row3) == True:
+                            print('O wins')
+                            break
+                    elif o == 8:
+                        taken.append(o)
+                        row3[1] = 'O'
+                        print(row1)
+                        print(row2)
+                        print(row3)
+                        count += 1
+                        if win_check(row1, row2, row3) == True:
+                            print('O wins')
+                            break
+                    elif o == 9:
+                        taken.append(o)
+                        row3[2] = 'O'
+                        print(row1)
+                        print(row2)
+                        print(row3)
+                        count += 1
+                        if win_check(row1, row2, row3) == True:
+                            print('O wins')
+                            break
+                else:
+                    print('Invalid, must be between 1 - 9')
+                    check = 'out'
+                    while check != ' ':
+                        o = int(input('Enter O plaacement: '))
+                        if o not in taken:
+                            if o > 0 and o <=9:
+                                if o == 1:
+                                    taken.append(o)
+                                    row1[0] = 'O'
+                                    print(row1)
+                                    print(row2)
+                                    print(row3)
+                                    count += 1
+                                    if win_check(row1, row2, row3) == True:
+                                        print('O wins')
+                                        return
+                                    else:
+                                        check = ' '
+                                elif o == 2:
+                                    taken.append(o)
+                                    row1[1] = 'O'
+                                    print(row1)
+                                    print(row2)
+                                    print(row3)
+                                    count += 1
+                                    if win_check(row1, row2, row3) == True:
+                                        print('O wins')
+                                        return
+                                    else:
+                                        check = ' '
+                                elif o == 3:
+                                    taken.append(o)
+                                    row1[2] = 'O'
+                                    print(row1)
+                                    print(row2)
+                                    print(row3)
+                                    count += 1
+                                    if win_check(row1, row2, row3) == True:
+                                        print('O wins')
+                                        return
+                                    else:
+                                        check = ' '
+                                elif o == 4:
+                                    taken.append(o)
+                                    row2[0] = 'O'
+                                    print(row1)
+                                    print(row2)
+                                    print(row3)
+                                    count += 1
+                                    if win_check(row1, row2, row3) == True:
+                                        print('O wins')
+                                        return
+                                    else:
+                                        check = ' '
+                                elif o == 5:
+                                    taken.append(o)
+                                    row2[1] = 'O'
+                                    print(row1)
+                                    print(row2)
+                                    print(row3)
+                                    count += 1
+                                    if win_check(row1, row2, row3) == True:
+                                        print('O wins')
+                                        return
+                                    else:
+                                        check = ' '
+                                elif o == 6:
+                                    taken.append(o)
+                                    row2[2] = 'O'
+                                    print(row1)
+                                    print(row2)
+                                    print(row3)
+                                    count += 1
+                                    if win_check(row1, row2, row3) == True:
+                                        print('O wins')
+                                        return
+                                    else:
+                                        check = ' '
+                                elif o == 7:
+                                    taken.append(o)
+                                    row3[0] = 'O'
+                                    print(row1)
+                                    print(row2)
+                                    print(row3)
+                                    count += 1
+                                    if win_check(row1, row2, row3) == True:
+                                        print('O wins')
+                                        return
+                                    else:
+                                        check = ' '
+                                elif o == 8:
+                                    taken.append(o)
+                                    row3[1] = 'O'
+                                    print(row1)
+                                    print(row2)
+                                    print(row3)
+                                    count += 1
+                                    if win_check(row1, row2, row3) == True:
+                                        print('O wins')
+                                        return
+                                    else:
+                                        check = ' '
+                                elif o == 9:
+                                    taken.append(o)
+                                    row3[2] = 'O'
+                                    print(row1)
+                                    print(row2)
+                                    print(row3)
+                                    count += 1
+                                    if win_check(row1, row2, row3) == True:
+                                        print('O wins')
+                                        return
+                                    else:
+                                        check = ' '
+                            else:
+                                print('Invalid, must be between 1 - 9')
+            else:
+                print('This place is already taken, try again')
+                check2 = 'taken'
+                while check2 != ' ':
+                    o = int(input('Enter O placement: '))
+                    if o not in taken:
+                        if o > 0 and o <=9:
+                            if o == 1:
+                                taken.append(o)
+                                row1[0] = 'O'
+                                print(row1)
+                                print(row2)
+                                print(row3)
+                                count += 1
+                                if win_check(row1, row2, row3) == True:
+                                    print('O wins')
+                                    return
+                                else:
+                                    check2 = ' '
+                            elif o == 2:
+                                taken.append(o)
+                                row1[1] = 'O'
+                                print(row1)
+                                print(row2)
+                                print(row3)
+                                count += 1
+                                if win_check(row1, row2, row3) == True:
+                                    print('O wins')
+                                    return
+                                else:
+                                    check2 = ' '
+                            elif o == 3:
+                                taken.append(o)
+                                row1[2] = 'O'
+                                print(row1)
+                                print(row2)
+                                print(row3)
+                                count += 1
+                                if win_check(row1, row2, row3) == True:
+                                    print('O wins')
+                                    return
+                                else:
+                                    check2 = ' '
+                            elif o == 4:
+                                taken.append(o)
+                                row2[0] = 'O'
+                                print(row1)
+                                print(row2)
+                                print(row3)
+                                count += 1
+                                if win_check(row1, row2, row3) == True:
+                                    print('O wins')
+                                    return
+                                else:
+                                    check2 = ' '
+                            elif o == 5:
+                                taken.append(o)
+                                row2[1] = 'O'
+                                print(row1)
+                                print(row2)
+                                print(row3)
+                                count += 1
+                                if win_check(row1, row2, row3) == True:
+                                    print('O wins')
+                                    return
+                                else:
+                                    check2 = ' '
+                            elif o == 6:
+                                taken.append(o)
+                                row2[2] = 'O'
+                                print(row1)
+                                print(row2)
+                                print(row3)
+                                count += 1
+                                if win_check(row1, row2, row3) == True:
+                                    print('O wins')
+                                    return
+                                else:
+                                    check2 = ' '
+                            elif o == 7:
+                                taken.append(o)
+                                row3[0] = 'O'
+                                print(row1)
+                                print(row2)
+                                print(row3)
+                                count += 1
+                                if win_check(row1, row2, row3) == True:
+                                    print('O wins')
+                                    return
+                                else:
+                                    check2 = ' '
+                            elif o == 8:
+                                taken.append(o)
+                                row3[1] = 'O'
+                                print(row1)
+                                print(row2)
+                                print(row3)
+                                count += 1
+                                if win_check(row1, row2, row3) == True:
+                                    print('O wins')
+                                    return
+                                else:
+                                    check2 = ' '
+                            elif o == 9:
+                                taken.append(o)
+                                row3[2] = 'O'
+                                print(row1)
+                                print(row2)
+                                print(row3)
+                                count += 1
+                                if win_check(row1, row2, row3) == True:
+                                    print('O wins')
+                                    return
+                                else:
+                                    check2 = ' '
+                        else:
+                            print('Invalid, must be between 1 - 9')
+                            check = 'out'
+                            while check != ' ':
+                                o = int(input('Enter O plaacement: '))
+                                if o not in taken:
+                                    if o > 0 and o <=9:
+                                        if o == 1:
+                                            taken.append(o)
+                                            row1[0] = 'O'
+                                            print(row1)
+                                            print(row2)
+                                            print(row3)
+                                            count += 1
+                                            if win_check(row1, row2, row3) == True:
+                                                print('O wins')
+                                                return
+                                            else:
+                                                check = ' '
+                                        elif o == 2:
+                                            taken.append(o)
+                                            row1[1] = 'O'
+                                            print(row1)
+                                            print(row2)
+                                            print(row3)
+                                            count += 1
+                                            if win_check(row1, row2, row3) == True:
+                                                print('O wins')
+                                                return
+                                            else:
+                                                check = ' '
+                                        elif o == 3:
+                                            taken.append(o)
+                                            row1[2] = 'O'
+                                            print(row1)
+                                            print(row2)
+                                            print(row3)
+                                            count += 1
+                                            if win_check(row1, row2, row3) == True:
+                                                print('O wins')
+                                                return
+                                            else:
+                                                check = ' '
+                                        elif o == 4:
+                                            taken.append(o)
+                                            row2[0] = 'O'
+                                            print(row1)
+                                            print(row2)
+                                            print(row3)
+                                            count += 1
+                                            if win_check(row1, row2, row3) == True:
+                                                print('O wins')
+                                                return
+                                            else:
+                                                check = ' '
+                                        elif o == 5:
+                                            taken.append(o)
+                                            row2[1] = 'O'
+                                            print(row1)
+                                            print(row2)
+                                            print(row3)
+                                            count += 1
+                                            if win_check(row1, row2, row3) == True:
+                                                print('O wins')
+                                                return
+                                            else:
+                                                check = ' '
+                                        elif o == 6:
+                                            taken.append(o)
+                                            row2[2] = 'O'
+                                            print(row1)
+                                            print(row2)
+                                            print(row3)
+                                            count += 1
+                                            if win_check(row1, row2, row3) == True:
+                                                print('O wins')
+                                                return
+                                            else:
+                                                check = ' '
+                                        elif o == 7:
+                                            taken.append(o)
+                                            row3[0] = 'O'
+                                            print(row1)
+                                            print(row2)
+                                            print(row3)
+                                            count += 1
+                                            if win_check(row1, row2, row3) == True:
+                                                print('O wins')
+                                                return
+                                            else:
+                                                check = ' '
+                                        elif o == 8:
+                                            taken.append(o)
+                                            row3[1] = 'O'
+                                            print(row1)
+                                            print(row2)
+                                            print(row3)
+                                            count += 1
+                                            if win_check(row1, row2, row3) == True:
+                                                print('O wins')
+                                                return
+                                            else:
+                                                check = ' '
+                                        elif o == 9:
+                                            taken.append(o)
+                                            row3[2] = 'O'
+                                            print(row1)
+                                            print(row2)
+                                            print(row3)
+                                            count += 1
+                                            if win_check(row1, row2, row3) == True:
+                                                print('O wins')
+                                                return
+                                            else:
+                                                check = ' '
+                                    else:
+                                        print('Invalid, must be between 1 - 9')
+                    else:
+                        print('This place is already taken, try again')
+        if count == 9 and win_check(row1, row2, row3) == False:
+            print(' ')
+            print('No one wins :(')                     
+    else:
+        print('Goodbye')
+    
+tictac()
